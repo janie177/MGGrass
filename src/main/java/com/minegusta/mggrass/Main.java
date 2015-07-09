@@ -1,4 +1,4 @@
-package com.minegusta.mggrass.Main;
+package com.minegusta.mggrass;
 
 import com.google.common.collect.Lists;
 import org.bukkit.*;
