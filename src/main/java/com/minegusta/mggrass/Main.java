@@ -57,7 +57,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
         Random rand = new Random();
         int i = 0;
 
-        while (i < 25)
+        while (i < 20)
         {
             int newX = (int) x + (rand.nextInt(120) - 60);
             int newZ = (int) z + (rand.nextInt(120) - 60);
@@ -126,8 +126,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
         }
         Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), ()-> blocks.stream().forEach(b ->
         {
-            b.setData((byte)1);
             b.setType(Material.LONG_GRASS);
+            b.setData((byte)1);
         }), 20);
     }
 }
