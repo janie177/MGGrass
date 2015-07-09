@@ -1,0 +1,9 @@
+main: com.minegusta.mggrass.Main
+name: ${project.name}
+author: janie177
+version: ${project.version}
+commands:
+  grassify:
+    usage: /grassify
+    description: Make grass!
+    default: op
