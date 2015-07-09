@@ -59,8 +59,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 
         while (i < 20)
         {
-            int newX = (int) x + (rand.nextInt(120) - 60);
-            int newZ = (int) z + (rand.nextInt(120) - 60);
+            int newX = (int) x + (rand.nextInt(160) - 80);
+            int newZ = (int) z + (rand.nextInt(160) - 80);
             int y = p.getWorld().getHighestBlockYAt(newX, newZ) - 1;
 
             Block b = p.getWorld().getBlockAt(newX, y, newZ);
@@ -128,6 +128,6 @@ public class Main extends JavaPlugin implements CommandExecutor{
         {
             b.setType(Material.LONG_GRASS);
             b.setData((byte)1);
-        }), 20);
+        }), 5);
     }
 }
