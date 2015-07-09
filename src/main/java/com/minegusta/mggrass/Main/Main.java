@@ -107,7 +107,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
         Random rand = new Random();
         List<Block> blocks = Lists.newArrayList();
 
-        int radius = 7;
+        int radius = 6;
 
         for(int x = -radius; x < radius; x++)
         {
