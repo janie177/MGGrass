@@ -57,11 +57,11 @@ public class Main extends JavaPlugin implements CommandExecutor{
         Random rand = new Random();
         int i = 0;
 
-        while (i < 15)
+        while (i < 25)
         {
             int newX = (int) x + (rand.nextInt(120) - 60);
             int newZ = (int) z + (rand.nextInt(120) - 60);
-            int y = p.getWorld().getHighestBlockYAt(newX, newZ);
+            int y = p.getWorld().getHighestBlockYAt(newX, newZ) - 1;
 
             Block b = p.getWorld().getBlockAt(newX, y, newZ);
 
@@ -111,7 +111,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 
         for(int x = -radius; x < radius; x++)
         {
-            for(int y = -1; y < 2; y++)
+            for(int y = -1; y < 3; y++)
             {
                 for(int z = -radius; z < radius; z++)
                 {
@@ -124,6 +124,10 @@ public class Main extends JavaPlugin implements CommandExecutor{
                 }
             }
         }
-        Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), ()-> blocks.stream().forEach(b -> b.setType(Material.LONG_GRASS)), 20);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), ()-> blocks.stream().forEach(b ->
+        {
+            b.setData((byte)1);
+            b.setType(Material.LONG_GRASS);
+        }), 20);
     }
 }
