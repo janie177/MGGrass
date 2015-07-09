@@ -107,7 +107,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
         Random rand = new Random();
         List<Block> blocks = Lists.newArrayList();
 
-        int radius = 6;
+        int radius = 7;
 
         for(int x = -radius; x < radius; x++)
         {
@@ -116,6 +116,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
                 for(int z = -radius; z < radius; z++)
                 {
                     Block newBlock = start.getBlock().getRelative(x, y, z);
+                    if(newBlock.getLocation().distance(start) > 5) continue;
                     if(newBlock.getType() == Material.AIR && newBlock.getRelative(0, -1, 0).getType() == Material.GRASS && rand.nextBoolean())
                     {
                         blocks.add(newBlock);
